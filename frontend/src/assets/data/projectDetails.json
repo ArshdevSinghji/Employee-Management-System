@@ -1,0 +1,75 @@
+{
+    "functionalities": [
+      {
+        "title": "Manager Role",
+        "description": "Managers have full access to employees under their specific branch. They can manage the employees working in their branch, including viewing, updating, and deleting employee details. Managers can assign tasks to employees, track performance, and manage salaries for employees within their branch."
+      },
+      {
+        "title": "Employee Role",
+        "description": "Employees have access to their own records and can update personal details such as name, contact, position, and salary. Employees can only view and manage their own tasks assigned by their manager. They are restricted to seeing their own data and cannot perform CRUD operations on other employees or branches."
+      },
+      {
+        "title": "User Registration & Authentication",
+        "description": "The system allows users to register with their personal details. A JWT-based authentication system ensures secure login and that only authorized users can access certain routes. Both managers and employees can log in with different levels of access."
+      },
+      {
+        "title": "Branch Management",
+        "description": "Employees are assigned to specific branches, and managers oversee employees in their assigned branch. The system allows managers to manage employee details for employees within their branch."
+      },
+      {
+        "title": "CRUD Operations for Employees",
+        "description": "Managers can perform CRUD (Create, Read, Update, Delete) operations on employee records within their branch. Employees can only view and update their own records."
+      },
+      {
+        "title": "Salary Management",
+        "description": "The system tracks employee salaries. Managers can update the salaries of employees under their branch, while employees can view and update their salary information."
+      },
+      {
+        "title": "Employee Task Management",
+        "description": "Managers can assign tasks to employees, set deadlines, and track task completion. Employees can view and update the status of tasks assigned to them by their manager."
+      },
+      {
+        "title": "Security Features",
+        "description": "The system uses JWT (JSON Web Tokens) for secure authentication, ensuring that only authorized users can access certain routes. Passwords are securely hashed using bcryptjs."
+      },
+      {
+        "title": "Responsive User Interface",
+        "description": "The frontend is designed to be responsive, allowing users to access the system from various devices including desktops, tablets, and mobile phones."
+      },
+      {
+        "title": "Dashboard for Managers",
+        "description": "Managers have access to a dashboard that displays an overview of their team’s performance, including active tasks, pending tasks, and overall team productivity."
+      }
+    ],
+    "technologiesUsed": [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT (JSON Web Tokens)",
+      "bcryptjs",
+      "React.js",
+      "Mongoose",
+      "Axios",
+      "CSS3",
+      "HTML5"
+    ],
+    "projectGoals": [
+      "Provide a secure and efficient way for managers and employees to interact with the system.",
+      "Implement RBAC to ensure users can only access data and perform actions relevant to their roles.",
+      "Simplify employee data management, task assignments, and salary management.",
+      "Ensure the system is scalable, with potential to add more roles or features in the future."
+    ],
+    "futurePlans": [
+      "Add additional employee levels (e.g., Senior, Junior, etc.) to allow more granular control over responsibilities.",
+      "Implement email notifications for task deadlines, approvals, and other important updates.",
+      "Develop a leave management system for employees to request and manage leave.",
+      "Create an analytics dashboard for managers to generate reports on employee performance and task completion.",
+      "Add performance tracking features to monitor employee performance, including task completion rates and overall work efficiency."
+    ],
+    "contactInformation": {
+      "email": "support@company.com",
+      "phone": "+1 234 567 890",
+      "address": "123 Business St., City, Country"
+    }
+  }
+  

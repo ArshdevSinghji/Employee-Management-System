@@ -1,0 +1,21 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav-items{
+    font-size: 14px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-items a{
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-items a:hover{
+    text-decoration: underline;
+}
