@@ -1,4 +1,5 @@
 const { Employee } = require("../models/Employee");
+const { Manager } = require("../models/Manager");
 
 exports.getAllEmployees = async (req, res) => {
   try {
@@ -15,7 +16,15 @@ exports.getAllEmployees = async (req, res) => {
 exports.getEmployeeById = async (req, res) => {
   try {
     const employee = await Employee.findById(req.params.id);
-    res.status(200).json(employee);
+    if (!employee) {
+      const manager = await Manager.findById(req.params.id);
+      if (!manager) {
+        return res.status(404).json({ msg: "Employee not found" });
+      }
+      return res.status(200).json(manager);
+    } else {
+      return res.status(200).json(employee);
+    }
   } catch (err) {
     console.log(err);
     res.status(500).send("Server error");
@@ -45,10 +54,19 @@ exports.updateEmployee = async (req, res) => {
     );
 
     if (!updatedEmployee) {
-      return res.status(404).json({ msg: "Employee not found" });
+      const updatedManager = await Manager.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true },
+      );
+      if (!updatedManager) {
+        return res.status(404).json({ msg: "Employee not found" });
+      } else {
+        return res.status(200).json(updatedManager);
+      }
+    } else {
+      return res.status(200).json(updatedEmployee);
     }
-
-    res.status(200).json(updatedEmployee); // Send the updated employee back in the response
   } catch (err) {
     console.log(err);
     res.status(500).send("Server error");

@@ -59,3 +59,30 @@
   .footer-section p {
     margin: 5px 0;
   }
+
+  @media (max-width: 1024px) {
+    .footer {
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+      height: auto;
+    }
+  
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-section {
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer {
+      height: auto;
+    }
+  }

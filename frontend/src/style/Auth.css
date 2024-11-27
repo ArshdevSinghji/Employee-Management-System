@@ -80,3 +80,17 @@
 .login-container select:focus {
   outline: none;
 }
+
+@media (max-width: 768px) {
+  .sign-container {
+    flex-direction: column;
+  }
+
+  .register-image {
+    display: none;
+  }
+
+  .login-container {
+    padding: 20px;
+  }
+}

@@ -7,6 +7,7 @@ import EmployeeList from './component/Dashboard/EmployeeList';
 import Nav from './pages/Nav';
 import Home from './pages/Home';
 import Footer from './pages/Footer';
+import {LoginContextProvider} from './component/context/LoginContext';
 
 const App = () => {
   const location = useLocation();
@@ -29,7 +30,9 @@ const App = () => {
 
 const AppWrapper = () => (
   <Router>
-    <App />
+    <LoginContextProvider>
+      <App />
+    </LoginContextProvider>
   </Router>
 );
 

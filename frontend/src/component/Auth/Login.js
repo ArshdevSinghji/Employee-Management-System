@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import LoginImage from "../../assets/image/woman-9009013_640.webp";
 
 import "../../style/Auth.css";
 import { Link, useNavigate } from "react-router-dom";
 import { setAuthToken } from "../../services/api";
 
+import { LoginContext } from "../context/LoginContext";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const { setLoggedIn, setRole } = useContext(LoginContext);
 
   const navigate=useNavigate();
 
@@ -20,8 +24,9 @@ const Login = () => {
         body: JSON.stringify({ email, password }),
       });
       const data = await response.json();
-      console.log(data.token);
 
+      setLoggedIn(data.id);
+      setRole(data.role);
       setAuthToken(data.token);
       
       localStorage.setItem("token",data.token);
